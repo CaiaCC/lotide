@@ -23,7 +23,9 @@ const middle = function (array) {
 
 console.log(middle([1, 4, 6, 7, 7, 3, 6]));
 
+
 const eqArrays = function (array1, array2) {	
+	array1 = middle(array1);
 	let isequal = true;
 	let i = 0;
 	while(i < array1.length) {
@@ -36,14 +38,16 @@ const eqArrays = function (array1, array2) {
 		return isequal;
 };
 
+
+
 const assertArraysEqual = function (array1, array2) {
 	let input = eqArrays(array1, array2);
 
 	if (input) {
-		console.log(`✅✅✅ Assertion passed: ${array1} === ${array2}`);
+		console.log(`✅✅✅ Assertion passed: ${middle(array1)} === ${array2}`);
 	} else {
-		console.log(`🛑🛑🛑 Assertion failed: ${array1} !== ${array2}`);
+		console.log(`🛑🛑🛑 Assertion failed: ${middle(array1)} !== ${array2}`);
 	}
 };
 
-// assertArraysEqual([1, 2, 3], [1, 2, 3]);
+assertArraysEqual([1, 2, 4, 3], [2, 4]);

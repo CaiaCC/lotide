@@ -13,7 +13,7 @@ const eqArrays = function (array1, array2) {
 
 // console.log(eqArrays([1, 2, 3], [1, 2, 3]));
 
-const assertEqual = function (array1, array2) {
+const assertArraysEqual = function (array1, array2) {
 	let input = eqArrays(array1, array2);
 
 	if (input) {
@@ -23,4 +23,4 @@ const assertEqual = function (array1, array2) {
 	}
 };
 
-assertEqual([1, 2, 3], [1, 2, 3]);
+assertArraysEqual([1, 2, 3], [1, 2, 3]);

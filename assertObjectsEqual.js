@@ -1,11 +1,12 @@
 const assertObjectEqual = function(actual, expected) {
-	let isEqual = (eqObjects(actual, expected))
+    const inspect = require('util').inspect; 
+    let isEqual = (eqObjects(actual, expected));
 
 	if (isEqual) {
-		console.log(`✅✅✅ Assertion passed: ${JSON.stringify(actual)} === ${JSON.stringify(expected)}`);
-	} else {
-		console.log(`🛑🛑🛑 Assertion failed: ${JSON.stringify(actual)} !== ${JSON.stringify(expected)}`);
-	}
+        console.log(`✅✅✅ Assertion passed: ${inspect(actual)} === ${inspect(expected)}`);
+    } else {
+        console.log(`🛑🛑🛑 Assertion failed: ${inspect(actual)} !== ${inspect(expected)}`);
+    }
 };
 
 const eqArrays = function (array1, array2) {
@@ -23,7 +24,7 @@ const eqArrays = function (array1, array2) {
 // { "trent": "skinny", "caia":"fat"}
 // { "trent": "skinny", "caia":"really fat"}
 
-const eqObjects = function (obj1, obj2) {
+const eqObjects  = function (obj1, obj2) {
 	let obj1Array = Object.keys(obj1);
 	let obj2Array = Object.keys(obj2);
 
@@ -32,7 +33,7 @@ const eqObjects = function (obj1, obj2) {
 	} else {
 		for (let ele1 of obj1Array) {
 			const val1 = obj1[ele1];
-
+			
 			const val2 = obj2[ele1];
 
 			if (Array.isArray(val1) && Array.isArray(val2)) {
@@ -61,9 +62,9 @@ const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };
 const cd2 = { c: "1", d: ["2", 3, 4] };
 
-console.log(eqObjects(ab, ba));
-console.log(eqObjects(ab, abc));
-console.log(eqObjects(ab, abc));
-console.log(eqObjects(bb, abc));
-console.log(eqObjects(cd, dc));
-console.log(eqObjects(cd, cd2));
+assertObjectEqual(ab, ba);
+assertObjectEqual(ab, abc);
+assertObjectEqual(ab, abc);
+assertObjectEqual(bb, abc);
+assertObjectEqual(cd, dc);
+assertObjectEqual(cd, cd2);

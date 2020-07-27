@@ -1,4 +1,4 @@
-const assert = require('chai').assert;
+const assert = require('chai').assert.deepEqual;
 const middle = require('../middle');
 
 describe("#middle", () => {
@@ -7,7 +7,7 @@ describe("#middle", () => {
 	});
 
 	it ("should return pass for [5, 2, 4, 4]), [2, 4]", () => {
-		assert.deepEqual(middle([5, 2, 4, 4]), [2, 4]);
+		assert(middle([5, 2, 4, 4]), [2, 4]);
 	});
 });
 

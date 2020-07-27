@@ -22,18 +22,17 @@ const eqArrays = function (array1, array2) {
 
 // { "trent": "skinny", "caia":"fat"}
 // { "trent": "skinny", "caia":"really fat"}
-
+/*
 const eqObjects = function (obj1, obj2) {
-	let obj1Array = Object.keys(obj1);
-	let obj2Array = Object.keys(obj2);
+	let obj1Keys = Object.keys(obj1);
+	let obj2Keys = Object.keys(obj2);
 
-	if (obj1Array.length !== obj2Array.length) {
+	if (obj1Keys.length !== obj2Keys.length) {
     	return false;
 	} else {
-		for (let ele1 of obj1Array) {
-			const val1 = obj1[ele1];
-
-			const val2 = obj2[ele1];
+		for (let key1 of obj1Keys) {
+			const val1 = obj1[key1];
+			const val2 = obj2[key1];
 
 			if (Array.isArray(val1) && Array.isArray(val2)) {
 				if (!eqArrays(val1, val2)) {
@@ -47,8 +46,35 @@ const eqObjects = function (obj1, obj2) {
 		}
 	}
 	return true;
-}
+}*/
+const eqObjects = function (obj1, obj2) {
+	let obj1Keys = Object.keys(obj1);
+	let obj2Keys = Object.keys(obj2);
 
+	if (obj1Keys.length !== obj2Keys.length) {
+    	return false;
+	} else {
+		for (let key1 of obj1Keys) {
+			const val1 = obj1[key1];
+			const val2 = obj2[key1];
+
+			if (Array.isArray(val1) && Array.isArray(val2)) {
+				if (!eqArrays(val1, val2)) {
+					return false;
+				} else if (!Array.isArray(val1) && !Array.isArray(val2)) {
+          if(!eqObjects(val1, val2)) {
+						return false;
+					}
+			  } 
+			} else {
+				if (val1 !== val2) {
+					return false;
+				}
+			}
+		}
+	}
+	return true;
+}
 
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
@@ -61,9 +87,15 @@ const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };
 const cd2 = { c: "1", d: ["2", 3, 4] };
 
-console.log(eqObjects(ab, ba));
-console.log(eqObjects(ab, abc));
-console.log(eqObjects(ab, abc));
-console.log(eqObjects(bb, abc));
-console.log(eqObjects(cd, dc));
-console.log(eqObjects(cd, cd2));
+/*
+console.log(eqObjects(ab, ba)); //true
+
+console.log(eqObjects(bb, abc)); //true
+console.log(eqObjects(cd, dc)); // true
+console.log(eqObjects(cd, cd2)); // false
+console.log(eqObjects(ab, abc)); //false
+*/
+console.log(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })) // => true
+
+console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })) // => false
+console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 })) // => false

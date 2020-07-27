@@ -33,7 +33,6 @@ const eqObjects  = function (obj1, obj2) {
 	} else {
 		for (let ele1 of obj1Array) {
 			const val1 = obj1[ele1];
-			
 			const val2 = obj2[ele1];
 
 			if (Array.isArray(val1) && Array.isArray(val2)) {

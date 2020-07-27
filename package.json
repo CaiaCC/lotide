@@ -1,19 +1,19 @@
 {
-  "name": "lotide",
+  "name": "@caia/lotide",
   "version": "1.0.0",
-  "description": "Lighthouse Lab lotide project",
+  "description": "Lighthouse Lab practice: lotide project",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CaiaCC/lotide.git"
   },
-  "author": "CaiaCC",
+  "author": "Caia Chuang",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/CaiaCC/lotide/issues"

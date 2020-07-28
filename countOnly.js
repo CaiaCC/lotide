@@ -1,13 +1,13 @@
-const assertEqual = function(actual, expected) {
+// const assertEqual = function(actual, expected) {
 	// if (actual === 0) {
 	// 	actual = undefined;
 	// }
-	if (actual === expected) {
-    console.log(`✅✅✅ Assertion passed: ${actual} === ${expected}`);
-  } else if (actual !== expected) {
-    console.log(`🛑🛑🛑 Assertion failed: ${actual} !== ${expected}`);
-  }
-};
+// 	if (actual === expected) {
+//     console.log(`✅✅✅ Assertion passed: ${actual} === ${expected}`);
+//   } else if (actual !== expected) {
+//     console.log(`🛑🛑🛑 Assertion failed: ${actual} !== ${expected}`);
+//   }
+// };
 
 // Object.keys(…) if o
 
@@ -16,7 +16,6 @@ const countOnly = function(allItems, itemsToCount) {
 	let results = {};
 	
 	for (const item of allItems) {
-	console.log(item);
 		if (itemsToCount[item]) {
 			if (results[item]) {
 				results[item] += 1;
@@ -24,7 +23,6 @@ const countOnly = function(allItems, itemsToCount) {
 				results[item] = 1;
 			}
 		}
-
 	}
 	// for(let i = 0; i < inspect.length; i++) {
 	
@@ -40,21 +38,4 @@ const countOnly = function(allItems, itemsToCount) {
 	return results;
 }
 
-
-const firstNames = [
-	"Karl",
-	"Salima",
-	"Agouhanna",
-	"Fang",
-	"Kavith",
-	"Jason",
-	"Salima",
-	"Fang",
-	"Joe"
-];
-// console.log(countOnly(firstNames, {Jason: true, Karima: true, Fang: true}))
-const result1 = countOnly(firstNames, {Jason: true, Karima: true, Fang: true});
-
-assertEqual(result1["Jason"], 1);
-assertEqual(result1["Karima"], undefined);
-assertEqual(result1["Fang"], 2);
+module.exports = countOnly

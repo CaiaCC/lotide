@@ -9,7 +9,7 @@ describe("#head", () => {
 	});
 
 	it("should returns 4 for [4, 1, 2, 3]", () => {
-		assert(head([4, 1, 2, 3]), 5);
+		assert(head([4, 1, 2, 3]), 4);
 	});
 });
 // assertEqual(head(["Lighthouse Lab"]), "Bootcamp");

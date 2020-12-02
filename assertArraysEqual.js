@@ -13,12 +13,12 @@ const eqArrays = require('./eqArrays')
 // console.log(eqArrays([1, 2, 3], [1, 2, 3]));
 
 const assertArraysEqual = function (array1, array2) {
-	let input = eqArrays(array1, array2);
+	let isArrEqual = eqArrays(array1, array2);
 
-	if (input) {
-		console.log(`✅✅✅ Assertion passed: ${array1} === ${array2}`);
+	if (isArrEqual) {
+		console.log(`👍 Assertion passed: ${array1} === ${array2}`);
 	} else {
-		console.log(`🛑🛑🛑 Assertion failed: ${array1} !== ${array2}`);
+		console.log(`❌ Assertion failed:  ${array1} !== ${array2}`);
 	}
 };
 

@@ -1,10 +1,10 @@
 
 
-const findKey = function(obj, callback) {
+const findKey = function(obj, val) {
 	let nameArray = Object.keys(obj);
 
 	for (let name of nameArray) {
-		if (callback(obj[name])) {
+		if (val(obj[name])) {
 			return name;
 		} 
 		

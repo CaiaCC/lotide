@@ -1,17 +1,29 @@
-const findKeyByValue = function (obj, val) {
-	let keyArray = Object.keys(obj);
-	let output;
+// const findKeyByValue = function (obj, val) {
+// 	let keys = Object.keys(obj);
+// 	let foundKey;
 
-	for (let element of keyArray) {
-		if (obj[element] === val) {
-			output = element;
-	  } else {
-      output = undefined;
-		}
-	}
-	return output;
-}
+// 	for (let key of keys) {
+// 		if (obj[key] === val) {
+// 			foundKey = key;
+// 	  } else {
+//       foundKey = undefined;
+// 		}
+// 	}
+// 	return foundKey;
+// }
+
+const findKeyByValue = (obj, val) => {
+  let foundKey;
+
+  for (const key in obj) {
+    if (obj[key] === val) {
+      foundKey = key;
+    } else {
+      foundKey = undefined;
+    }
+  }
+  return foundKey;
+};
+
 module.exports = findKeyByValue
-
-
 

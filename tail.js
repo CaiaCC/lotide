@@ -7,10 +7,12 @@
 // };
 
 const tail = function(array) {
-  array.shift();
-  return array;
+  const result = [...array];
+  result.shift();
+  return result;
 };
 
+console.log(tail([1, 3]));
 // const eqArrays = function (array1, array2) {
 // 	if (array1.length !== array2.length) {
 // 		return false;

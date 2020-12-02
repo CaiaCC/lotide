@@ -3,22 +3,38 @@
 // id middle != whole num, return: array[Math.floor(middle)] and array[Math.celi(middle)]
 
 
-const middle = function (array) {	
-	let output = [];
-	let middleIndex = array.length / 2;
-	let evenElements = array.length % 2
+// const middle = function (array) {	
+// 	let output = [];
+// 	let middleIndex = array.length / 2;
+// 	let evenElements = array.length % 2
 	
-	if (array.length === 1 || array.length === 2) {
-		return output;
-	} else {
-		if (evenElements !== 0) {
-			output.push(array[Math.floor(middleIndex)]);
-			return output;
-		} else {
-			output.push(array[middleIndex - 1]);
-			output.push(array[middleIndex]);
-			return output;
-		}
-	} 
+// 	if (array.length === 1 || array.length === 2) {
+// 		return output;
+// 	} else {
+// 		if (evenElements !== 0) {
+// 			output.push(array[Math.floor(middleIndex)]);
+// 			return output;
+// 		} else {
+// 			output.push(array[middleIndex - 1]);
+// 			output.push(array[middleIndex]);
+// 			return output;
+// 		}
+// 	} 
+// };
+
+const middle = (arr) => {
+	const length = arr.length;
+	if (length <= 2) return [];
+	
+  const middleArr = [];
+	const middleIndex = Math.floor((0 + (length - 1)) / 2);
+	
+	middleArr.push(arr[middleIndex]);
+  if (length % 2 === 0) {
+		middleArr.push(arr[middleIndex] + 1);
+	}
+	
+	return middleArr;
 };
+
 module.exports = middle

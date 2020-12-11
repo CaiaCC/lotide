@@ -12,16 +12,4 @@ const findKey = function(obj, val) {
 	return undefined;
 }
 
-module.exports = findKey
-
-
-
-// const assertEqual = function(actual, expected) {
-//   if (actual === expected) {
-//     console.log(`✅✅✅ Assertion passed: ${actual} === ${expected}`);
-//   } else if (actual !== expected) {
-//     console.log(`🛑🛑🛑 Assertion failed: ${actual} !== ${expected}`);
-//   }
-// };
-
-
+module.exports = findKey;

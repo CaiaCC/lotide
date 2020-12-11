@@ -1,4 +1,4 @@
-const assertEqual = function(actual, expected) {
+const assertEqual = function (actual, expected) {
   if (actual === expected) {
     console.log(`👍 Assertion passed: ${actual} === ${expected}`);
   } else if (actual !== expected) {
@@ -6,4 +6,4 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-module.exports  = assertEqual;
+module.exports = assertEqual;
